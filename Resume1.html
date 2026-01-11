@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aayush Tripathi - Technical Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* * HIGH IMPACT PRINT SUITE */
+      :root {
+        --sidebar: #0f172a; /* Slate 900 */
+        --accent: #2563eb; /* Blue 600 */
+        --text: #334155; /* Slate 700 */
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #9ca3af;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        -webkit-print-color-adjust: exact;
+      }
+
+      /* A4 Container */
+      .sheet {
+        width: 210mm;
+        height: 296mm;
+        background: white;
+        display: grid;
+        grid-template-columns: 70mm 1fr;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background: var(--sidebar);
+        color: white;
+        padding: 40px 25px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      /* Main Content */
+      .main {
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Typography */
+      h1 {
+        letter-spacing: -1px;
+        line-height: 1;
+      }
+
+      .section-title {
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--sidebar);
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 8px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .sidebar-title {
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 6px;
+      }
+
+      /* Skill Pills */
+      .skill {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        margin-right: 4px;
+        margin-bottom: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      /* Timeline */
+      .timeline-item {
+        position: relative;
+        padding-left: 20px;
+        border-left: 2px solid #e5e7eb;
+        margin-bottom: 25px;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: -6px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 2px solid white;
+      }
+
+      /* Highlight Text */
+      strong {
+        color: #111827; /* Darker black for highlights */
+        font-weight: 700;
+      }
+
+      /* PRINT OVERRIDES */
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          padding: 0;
+          background: none;
+          gap: 0;
+        }
+        .sheet {
+          box-shadow: none;
+          margin: 0;
+          page-break-after: always;
+          height: 297mm;
+        }
+        .no-print {
+          display: none !important;
+        }
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+        a {
+          text-decoration: none !important;
+          color: inherit !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="no-print fixed top-10 right-10 z-50 flex flex-col items-end gap-2"
+    >
+      <div
+        class="bg-black text-white text-xs p-2 rounded shadow opacity-80 mb-2"
+      >
+        Tip: Set Margins to "None"
+      </div>
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-2xl flex items-center gap-2 transition transform hover:scale-105"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2.5 0a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm5.5-3a.75.75 0 100-1.5 .75.75 0 000 1.5z"
+          ></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2"
+          ></path>
+        </svg>
+        Save 2-Page PDF
+      </button>
+    </div>
+
+    <div class="sheet" id="page1">
+      <aside class="sidebar">
+        <div class="mb-10">
+          <h3 class="sidebar-title">Contact</h3>
+          <div class="flex flex-col gap-5 text-xs font-light text-gray-300">
+            <div>
+              <div class="font-bold text-gray-400 uppercase text-[10px] mb-0.5">
+                Location
+              </div>
+              <div class="text-white font-medium">Ahmedabad, Gujarat</div>
+            </div>
+            <div>
+              <div class="font-bold text-gray-400 uppercase text-[10px] mb-0.5">
+                Phone
+              </div>
+              <div class="text-white font-medium">+91 9737759381</div>
+            </div>
+            <div>
+              <div class="font-bold text-gray-400 uppercase text-[10px] mb-0.5">
+                Email
+              </div>
+              <div class="text-white font-medium break-all">
+                aayushtripathi.tech@gmail.com
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-gray-400 uppercase text-[10px] mb-0.5">
+                LinkedIn
+              </div>
+              <a
+                href="https://linkedin.com/in/aayushtripathi081103"
+                class="text-white hover:text-blue-400 break-words leading-tight"
+                >linkedin.com/in/aayushtripathi081103</a
+              >
+            </div>
+            <div>
+              <div class="font-bold text-gray-400 uppercase text-[10px] mb-0.5">
+                GitHub
+              </div>
+              <a
+                href="https://github.com/Aayush8113"
+                class="text-white hover:text-blue-400 break-words leading-tight"
+                >github.com/Aayush8113</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <h3 class="sidebar-title">Languages</h3>
+          <div class="flex flex-col gap-4 w-full">
+            <div
+              class="flex justify-between items-center border-b border-gray-800 pb-2"
+            >
+              <span class="text-sm font-medium text-white">Gujarati</span>
+              <span
+                class="text-[10px] font-bold text-blue-400 uppercase tracking-widest"
+                >Native</span
+              >
+            </div>
+
+            <div
+              class="flex justify-between items-center border-b border-gray-800 pb-2"
+            >
+              <span class="text-sm font-medium text-white">Hindi</span>
+              <span
+                class="text-[10px] font-bold text-blue-400 uppercase tracking-widest"
+                >Fluent</span
+              >
+            </div>
+
+            <div
+              class="flex justify-between items-center border-b border-gray-800 pb-2"
+            >
+              <span class="text-sm font-medium text-white">English</span>
+              <span
+                class="text-[10px] font-bold text-gray-400 uppercase tracking-widest"
+                >Intermediate</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="sidebar-title">Education</h3>
+          <div class="text-white mb-4">
+            <div class="font-bold text-sm">B.E. Computer Engineering</div>
+            <div class="text-xs text-gray-400 mt-1">
+              Gandhinagar Institute of Technology
+            </div>
+            <div
+              class="text-[10px] text-blue-400 mt-1 font-bold uppercase tracking-wide"
+            >
+              Pursuing
+            </div>
+          </div>
+          <div class="text-white">
+            <div class="font-bold text-sm">Full Stack Development</div>
+            <div class="text-xs text-gray-400 mt-1">
+              Self-Directed Intensive
+            </div>
+            <div class="text-[10px] text-gray-500 mt-1 font-medium">2024</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="mb-10 pb-6 border-b border-gray-200">
+          <h1
+            class="text-5xl font-extrabold text-gray-900 mb-2 uppercase tracking-tighter"
+          >
+            Aayush <span class="text-blue-600">Tripathi</span>
+          </h1>
+          <p class="text-xl font-medium text-gray-500 tracking-wide">
+            Full Stack Developer & MERN Specialist
+          </p>
+        </header>
+
+        <section class="mb-10">
+          <h2 class="section-title">
+            <span class="w-2 h-2 bg-blue-600 rounded-sm mr-2"></span> Executive
+            Profile
+          </h2>
+          <p class="text-sm text-gray-600 leading-7 text-justify">
+            Results-driven <strong>Full Stack Developer</strong> specialized in
+            the MERN ecosystem. Proficient in architecting scalable Single Page
+            Applications (SPAs) and optimizing backend performance. I combine
+            rigorous <strong>algorithmic problem-solving</strong> with a passion
+            for clean, maintainable code to deliver high-quality production
+            software.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="section-title">
+            <span class="w-2 h-2 bg-blue-600 rounded-sm mr-2"></span>
+            Professional Experience
+          </h2>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="text-lg font-bold text-gray-800">
+                MERN Stack Developer Intern
+              </h3>
+              <span
+                class="text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100 px-2 py-1 rounded"
+                >6 Months</span
+              >
+            </div>
+            <div class="text-sm font-semibold text-gray-500 mb-3">
+              FRANMAXINDIA PVT • Ahmedabad
+            </div>
+
+            <ul
+              class="list-disc ml-4 space-y-2 text-sm text-gray-600 marker:text-blue-500"
+            >
+              <li>
+                <strong>Frontend Engineering:</strong> Architected responsive,
+                high-performance user interfaces using
+                <strong>React.js</strong> and modern CSS frameworks, ensuring
+                pixel-perfect execution of Figma designs.
+              </li>
+              <li>
+                <strong>API Development:</strong> Orchestrated robust RESTful
+                API endpoints using <strong>Node.js</strong> and
+                <strong>Express</strong>, implementing asynchronous data
+                handling to optimize server response times.
+              </li>
+              <li>
+                <strong>Database Optimization:</strong> Managed complex
+                <strong>MongoDB</strong> aggregations and schemas, ensuring
+                strict data integrity and efficient CRUD operations in a
+                production environment.
+              </li>
+              <li>
+                <strong>Agile Workflow:</strong> Collaborated in a
+                cross-functional team using <strong>Git/GitHub</strong> for
+                version control, managing merge conflicts and code reviews
+                efficiently.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="sheet" id="page2">
+      <aside class="sidebar">
+        <div class="mb-8">
+          <h3 class="sidebar-title">Tech Arsenal</h3>
+
+          <div class="mb-6">
+            <div
+              class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-wide"
+            >
+              Frontend
+            </div>
+            <div>
+              <span class="skill">React.js</span>
+              <span class="skill">Next.js</span>
+              <span class="skill">Tailwind CSS</span>
+              <span class="skill">Redux State</span>
+              <span class="skill">HTML5/CSS3</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <div
+              class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-wide"
+            >
+              Backend
+            </div>
+            <div>
+              <span class="skill">Node.js</span>
+              <span class="skill">Express.js</span>
+              <span class="skill">REST Architecture</span>
+              <span class="skill">JWT Auth</span>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <div
+              class="text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-wide"
+            >
+              Database & Tools
+            </div>
+            <div>
+              <span class="skill">MongoDB</span>
+              <span class="skill">Mongoose ORM</span>
+              <span class="skill">Git / GitHub</span>
+              <span class="skill">Postman API</span>
+              <span class="skill">VS Code</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="sidebar-title">Core Competencies</h3>
+          <ul class="space-y-3 text-xs text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg
+                class="w-3 h-3 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Data Structures & Algorithms
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                class="w-3 h-3 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Scalable System Design
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                class="w-3 h-3 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Performance Optimization
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                class="w-3 h-3 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+              Technical Documentation
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="mb-10">
+          <h2 class="section-title">
+            <span class="w-2 h-2 bg-blue-600 rounded-sm mr-2"></span> Technical
+            Projects
+          </h2>
+
+          <div
+            class="mb-8 bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm"
+          >
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-bold text-gray-900">
+                Task Manager System
+              </h3>
+              <span
+                class="text-[10px] font-bold uppercase tracking-wide text-white bg-gray-900 px-2 py-1 rounded"
+                >Full Stack</span
+              >
+            </div>
+            <div class="text-xs text-blue-600 font-mono mb-4">
+              Stack: MongoDB, Express, React, Node.js
+            </div>
+            <ul
+              class="list-disc ml-4 space-y-2 text-sm text-gray-600 marker:text-gray-400"
+            >
+              <li>
+                Engineered a comprehensive CRUD application implementing
+                <strong>JWT Authentication</strong> for secure user sessions and
+                protected routes.
+              </li>
+              <li>
+                Designed a dynamic frontend state management system using
+                <strong>React Hooks</strong> to ensure real-time UI updates
+                without page reloads.
+              </li>
+              <li>
+                Optimized backend logic to handle
+                <strong>nested task schemas</strong> in MongoDB, improving data
+                retrieval efficiency.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm"
+          >
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-bold text-gray-900">
+                Personal Portfolio
+              </h3>
+              <span
+                class="text-[10px] font-bold uppercase tracking-wide text-white bg-gray-900 px-2 py-1 rounded"
+                >Frontend</span
+              >
+            </div>
+            <div class="text-xs text-blue-600 font-mono mb-4">
+              Stack: React.js, Tailwind CSS, Framer Motion
+            </div>
+            <ul
+              class="list-disc ml-4 space-y-2 text-sm text-gray-600 marker:text-gray-400"
+            >
+              <li>
+                Deployed a high-performance personal brand website achieving a
+                <strong>98/100 Google Lighthouse</strong> performance score.
+              </li>
+              <li>
+                Implemented advanced <strong>CSS Grid</strong> layouts and
+                semantic HTML5 to ensure full accessibility and mobile
+                responsiveness.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">
+            <span class="w-2 h-2 bg-blue-600 rounded-sm mr-2"></span> Activities
+            & Interests
+          </h2>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div>
+              <h4
+                class="font-bold text-gray-900 text-sm mb-3 uppercase tracking-wide"
+              >
+                Athletics & Sports
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  Marathon Skating (Certified)
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  Competitive Swimming
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  Cricket
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4
+                class="font-bold text-gray-900 text-sm mb-3 uppercase tracking-wide"
+              >
+                Arts & Literature
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
+                  Classical Flute
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
+                  Guitar
+                </li>
+                <li class="flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
+                  Tech Reading
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
