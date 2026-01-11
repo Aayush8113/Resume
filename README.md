@@ -1,6 +1,7 @@
 # Aayush Tripathi | Full-Stack Software Engineer
 **Focus:** Modern Web Architectures (Next.js & MERN) | Freelance Consultant  
-**Current Status:** [Your Degree] at [Your University] & Active Freelance Developer
+**Current Status:** Bachelor of Engineering
+ at Gandhinagar University  & Active Freelance Developer
 
 ---
 
@@ -38,8 +39,6 @@ Here are the optimized layouts for your two projects:
 🍴 Modern Dining & Reservation Platform
 A full-stack solution for digitalizing the restaurant experience, from interactive menus to real-time table reservations.
 
-[Link to Live Demo] | [Link to Video Walkthrough]
-
 🚀 Key Features
 Dynamic Reservation System: Prevent double-booking with a logic-based table management engine.
 
@@ -59,8 +58,6 @@ Database: MongoDB Atlas.
 2. Dear Pages (Library Project)
 📚 Personal Library & Circulation Ledger
 A specialized tracking system designed to manage book sharing and reading progress within a closed group or family.
-
-[Link to Live Demo] | [Link to Video Walkthrough]
 
 🚀 Key Features
 Circulation Tracking: Real-time status updates on who currently holds a book and for how long.
@@ -104,3 +101,5 @@ Auth: JWT or Firebase (whichever you used for Login).
 <p align="center">
   <i>"Combining academic rigor with freelance efficiency."</i>
 </p>
+
+
